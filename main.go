@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+
 	"github.com/OpenListTeam/OpenList/v4/pkg/plugin"
 )
 
@@ -10,8 +12,6 @@ func main() {
 		panic(err)
 	}
 	for _, p := range ps {
-		for _, driver := range p.Drivers() {
-			println("  Driver:", driver.Config().Name)
-		}
+		log.Printf("Loaded plugin: %s \n", p.Config().Name)
 	}
 }
